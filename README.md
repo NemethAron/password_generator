@@ -28,16 +28,23 @@ print(f"Your password: {l}{n}{s}")
 
 
 #HARD:
-l_n_s=""
-r_l_n_s=""
+password_list = []
 
-for i in l:
-  l_n_s += i
-for i in n:
-  l_n_s += i
-for i in s:
-  l_n_s += i
+for char in range(1, nr_letters + 1):
+  password_list.append(random.choice(letters))
 
-for i in l_n_s:
-   r_l_n_s+=random.choice(l_n_s)
-print(r_l_n_s)
+for char in range(1, nr_symbols + 1):
+  password_list += random.choice(symbols)
+
+for char in range(1, nr_numbers + 1):
+  password_list += random.choice(numbers)
+
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+
+password = ""
+for char in password_list:
+  password += char
+
+print(f"Your password is: {password}")
